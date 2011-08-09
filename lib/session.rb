@@ -372,6 +372,7 @@ module Session
                 break if iodat[:end] or iodat[:io].eof?
 
                 line = iodat[:io].gets
+                line.force_encoding("binary") if defined?(Encoding)
 
                 buf = nil
 
